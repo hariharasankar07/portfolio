@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harihara Sankar - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #bb86fc;
+      --bg: #0e0e0e;
+      --light-bg: #1a1a1a;
+      --white: #fff;
+      --slide-speed: 1s;
+    }
+    [data-theme="light"] {
+      --primary: #6a0dad;
+      --bg: #ffffff;
+      --light-bg: #f0f0f0;
+      --white: #000;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--white);
+      overflow-x: hidden;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--light-bg);
+      color: var(--white);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    header {
+      background: linear-gradient(135deg, #6a0dad, #000);
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+      animation: slideDown var(--slide-speed) ease-out;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+    header h1 { font-size: 3rem; margin: 0; color: var(--white); }
+    header p { margin-top: 1rem; font-size: 1.2rem; color: var(--primary); }
+    .site-link { margin-top: 1rem; font-size: 1rem; }
+    .site-link a {
+      color: #fff;
+      background-color: #6a0dad;
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .site-link a:hover { background-color: #bb86fc; }
+    section {
+      background: var(--light-bg);
+      margin: 2rem 1rem;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transform: translateY(60px);
+      animation: fadeInUp var(--slide-speed) ease forwards;
+      animation-delay: var(--delay);
+      transition: all 0.4s ease;
+    }
+    h2 { color: var(--primary); margin-bottom: 1rem; }
+    ul { padding-left: 1.5rem; }
+    li { margin-bottom: 1rem; }
+    .certs li::marker { color: var(--primary); }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+    }
+    .skills-list li {
+      background: #2b2b2b;
+      padding: 0.8rem 1.2rem;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .skills-list i {
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+    .contact a { color: var(--primary); text-decoration: none; }
+    .contact a:hover { text-decoration: underline; }
+    section:nth-of-type(2) { --delay: 0.2s; }
+    section:nth-of-type(3) { --delay: 0.4s; }
+    section:nth-of-type(4) { --delay: 0.6s; }
+    section:nth-of-type(5) { --delay: 0.8s; }
+    section:nth-of-type(6) { --delay: 1s; }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @media (min-width: 768px) {
+      section { max-width: 800px; margin: 2rem auto; }
+    }
+  
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary);
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    </style>
+    
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i> Theme</button>
+  <header>
+    <img src="profile.jpg" alt="Harihara Sankar" class="profile-pic" />
+    <h1>Harihara Sankar</h1>
+    <p>Software Engineer | AI & ML Engineer | Digital Marketer</p>
+    
+  </header>
+  <section>
+    <h2>About Me</h2>
+    <p>
+      I'm a passionate software engineer with hands-on experience in AI, computer vision, and edge computing. I love solving real-world problems using tech, especially in agriculture and automation.
+    </p>
+  </section>
+  <section>
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Adaptive Wildlife Management System for Crop Protection</strong> – Built a smart surveillance system using Edge AI and Deep Learning (TCN, WildNet) for identifying wild animals and protecting crops.</li>
+      <li><strong>AI-Enabled Attendance System</strong> – Face recognition-based attendance system during internship at ICONIX Software Solutions using Python and OpenCV.</li>
+      <li><strong>Animal Intrusion Detection (Final Year Project)</strong> – Python-based detection system with TensorFlow and Raspberry Pi.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li><i class="fab fa-python"></i> Python</li>
+      <li><i class="fab fa-js"></i> JavaScript</li>
+      <li><i class="fas fa-code"></i> C++</li>
+      <li><i class="fas fa-robot"></i> TensorFlow</li>
+      <li><i class="fas fa-eye"></i> OpenCV</li>
+      <li><i class="fas fa-fire"></i> Flask</li>
+      <li><i class="fab fa-git-alt"></i> Git</li>
+      <li><i class="fas fa-microchip"></i> Arduino</li>
+      <li><i class="fas fa-microchip"></i> Raspberry Pi</li>
+      <li><i class="fas fa-users"></i> Team Collaboration</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Certifications</h2>
+    <ul class="certs">
+      <li>Successfully presented a Project at the Thoothukudi Innovation Conclave 2024.</li>
+      <li>Presented paper on Adaptive Wildlife Management System at ICCT’25, JACSI College of Engineering.</li>
+      <li>Completed "C for Beginners" course (Jan - Apr 2022).</li>
+      <li>Completed PHP and MySQL training in Spoken Tutorial, IIT Bombay.</li>
+      <li>Attended 5G & 6G Workshop by Anna University on 4th April 2024.</li>
+    </ul>
+  </section>
+  <section class="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:hariharasankar439@gmail.com">hariharasankar439@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/hariharasankar">linkedin.com/in/hariharasankar</a></p>
+    <p>GitHub: <a href="https://github.com/hariharasankar07">github.com/hariharasankar07</a></p>
+  </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll("section");
+      sections.forEach((sec, idx) => {
+        sec.style.animationDelay = `${0.2 + idx * 0.2}s`;
+      });
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    });
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute("data-theme");
+      if (currentTheme === "light") {
+        html.removeAttribute("data-theme");
+        localStorage.setItem("theme", "dark");
+      } else {
+        html.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+      }
+    }
+  </script>
+</body>
+</html>
